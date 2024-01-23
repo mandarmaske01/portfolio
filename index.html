@@ -366,10 +366,11 @@
             cursor: pointer;
             transition: transform 0.3s;
             width: 370px;
-            height: 425px;
+            height: 400px;
             background: #3498db;
             /* Default background color */
-            border-radius: 10px;
+            border-radius: 25px;
+            margin-right: 170px;
         }
 
         .project-card:hover {
@@ -383,7 +384,7 @@
         }
 
         .project-details {
-            padding: 15px;
+            padding: 29px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -489,6 +490,38 @@
             clip-path: polygon(0 0, 0 100%, 0 100%, 0 0);
             margin-bottom: 20px;
         }
+
+        .project-card img {
+    width: 100%; /* Adjust the width as needed */
+    height: auto;
+    max-height: 300px; /* Set a maximum height to maintain proportions */
+    object-fit: cover;
+}
+
+.hover-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(0, 0, 44);
+    font-size: 1.2rem;
+    background-color: rgb(129, 129, 144);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    text-align: center;
+}
+
+/* Styling for the project card on hover */
+.project-card:hover .hover-text {
+    opacity: 1;
+}
+
+/* Styling for the link (cursor pointer) */
+.project-card a {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
     </style>
 </head>
 
@@ -668,31 +701,29 @@
             <div class="projects-container">
 
                 <!-- Window 1 -->
-                <div class="project-card window1" onmouseover="playVideo('bookstore')"
-                    onmouseout="pauseVideo('bookstore')">
-                    <video controls loop muted>
-                        <!-- Replace 'your_bookstore_video_url' with the actual URL of your video -->
-                        <source src="boov.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="project-details">
-                        <div>
-                            <div class="project-name">Book Store Project</div>
-                        </div>
-                        <div class="project-description">
-                            Designed and implemented a Book Store Project independently, showcasing proficiency in
-                            Servlets, JSP, HTML/CSS, Java and MySQL.
-                        </div>
-                    </div>
-                </div>
+   <!-- Window 1 -->
+<div class="project-card window1" onmouseover="playVideo('bookstore')" onmouseout="pauseVideo('bookstore')">
+    <a href="https://drive.google.com/file/d/1N7Uao8S4qX-6O0PvNY_FAaKhq6M94Us0/view?usp=drivesdk" target="_blank">
+        <img src="bookimg.png" alt="Book Store Project Image">
+        <span class="hover-text" id="clicktovideo">Presentation Link</span>
+    </a>
+    <div class="project-details">
+        <div>
+            <div class="project-name">Book Store Project</div>
+        </div>
+        <div class="project-description">
+            Designed and implemented a Book Store Project independently, showcasing proficiency in Servlets, JSP, HTML/CSS, Java and MySQL.
+        </div>
+    </div>
+</div>
+
 
                 <!-- Window 2 -->
                 <div class="project-card window2" onmouseover="playVideo('netflix')" onmouseout="pauseVideo('netflix')">
-                    <video controls loop muted>
-                        <!-- Replace 'your_netflix_video_url' with the actual URL of your video -->
-                        <source src="netv.mkv" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+                    <a href="https://drive.google.com/file/d/1N7-4gDwtucgz6sD7dFsYKFtFpgvhyeQ3/view?usp=drivesdk" target="_blank">
+                        <img src="netfliximg.png" alt="Netflix Project Image">
+                        <span class="hover-text" id="clicktovideo">Presentation Link</span>
+                    </a>
                     <div class="project-details">
                         <div>
                             <div class="project-name">Netflix Clone Project</div>
@@ -704,14 +735,13 @@
                     </div>
                 </div>
 
-                <!-- Window 3 -->
+                <!-- Window 3
                 <div class="project-card window3" onmouseover="playVideo('mobileshop')"
                     onmouseout="pauseVideo('mobileshop')">
-                    <video controls loop muted>
-                        <!-- Replace 'your_mobileshop_video_url' with the actual URL of your video -->
-                        <source src="figv.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+                    <a href="https://www.figma.com/file/iySIkWiwQOmikXPSmHkulq/Shreedhar-Mobile-Shoppe?type=design&node-id=0%3A1&mode=design&t=eCsckklBYf61flpR-1" target="_blank">
+                        <img src="mobileprojectimg.png" alt="Figma Project Image">
+                        <span class="hover-text" id="clicktovideo">Prototype Link</span>
+                    </a>
                     <div class="project-details">
                         <div>
                             <div class="project-name">Mobile Shop Website</div>
@@ -720,7 +750,7 @@
                             Collaborated with Figma Software to create a compelling vision for the Mobile Shop Website.
                         </div>
                     </div>
-                </div>
+                </div> -->
 
             </div>
         </div>
@@ -735,7 +765,7 @@
     class="reveal-title">Contact Me !</h2>
     <!-- Contact Form -->
     <div class="contact-window">
-        <form id="form1" action="your_form_handler.php" method="post" netlify> 
+        <form id="form1" action="your_form_handler.php" method="post" netlify>
             <!-- Your form fields go here -->
             <!-- Example: -->
             <label for="name">Name:</label>
